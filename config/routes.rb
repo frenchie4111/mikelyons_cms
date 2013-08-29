@@ -7,9 +7,11 @@ Mikelyons::Application.routes.draw do
   match '/projects', to: 'static_pages#projects', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
-  
   get '/blog', to: 'blog_posts#show_all', as: :blog
   get '/blog/category/:category', to: 'blog_posts#show_category', as: :blog_category
+
+  get '/blog/sign_in', to: 'blog_posts#sign_in', as: :sign_in
+  post '/blog/sign_in', to: 'blog_posts#validate_sign_in', as: :validate_sign_in
 
   root 'static_pages#about'
 
