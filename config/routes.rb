@@ -16,7 +16,7 @@ Mikelyons::Application.routes.draw do
   root 'static_pages#about'
 
   namespace :admin do
-    root to: "pages#index"
+    root to: "home#index"
     resources :blog_posts
     resources :pages
   end
