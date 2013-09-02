@@ -1,7 +1,31 @@
-<ul>
-    <% @pages.each do |page| %>
-    <li>
-        <%= render page %>
-    </li>
-    <% end %>
-</ul>
+<table class='table'>
+    <thead>
+        <th style='width:25px;'>ID</th>
+        <th style='width:200px;'>Title</th>
+        <th>Content</th>
+        <th style='width:130px;'></th>
+    </thead>
+    <tbody id='rows'>
+
+        <% @pages.each do |page| %>
+        <tr data-id="<%= page.id.to_s %>">
+            <td><%= page.id.to_s %></td>
+            <td><%= page.title %></td>
+            <td><%= truncate( page.body, length: 75, seperator: " ", ommision: "..." ) %></td>
+            <td>
+                <%= link_to( edit_admin_page_path(page) ) do %>
+                    <div class='button edit' style='display:inline-block;'>Edit</div>
+                <% end %>
+
+                <%= link_to( admin_page_path(page), method: :delete, confirm: "Are you sure? (Cannot be undone)", remote: true ) do %>
+                    <div class='button delete' style='display:inline-block;'>Delete</div>
+                <% end %>
+            </td>
+        </tr>
+        <% end %>
+
+    </tbody>
+</table>
+<%= link_to( new_admin_page_path ) do %>
+    <div class='button' id='#new_page'>New Page</div>
+<% end %>

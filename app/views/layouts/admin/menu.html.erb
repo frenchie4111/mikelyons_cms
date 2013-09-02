@@ -9,25 +9,12 @@
             Back
         </div>
     </a>
-<!--
-        <div class='button menu_button' style='margin: 0px; padding: 7px; position: relative;' class='button'>
-            <div id='quick_jump_button'>
-                Quick Jump
-            </div>
-            <div id='quick_jump_menu'> 
-                <table class='.table'>
-                    <tbody>
-                    <tr><td>Test1</td></tr>
-                    <tr><td>Test2</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> -->
-        <a href='#'>
+        <%= link_to( "/admin" ) do %>
             <div class='button menu_button' style='margin: 0px; padding: 7px;' class='button'>
                 Home
             </div>
-        </a>
+        <% end %>
+
         <a href='#'>
             <div class='button menu_button' style='margin: 0px; margin-right: 5px; padding: 7px;' class='button'>
                 Logout

@@ -1,1 +1,18 @@
-<h1>Admin Home Page</h1>
+<div class='left_box'>
+    <div style='font-size: 20px;margin:5px;'> Actions: </div>
+    
+    <%= link_to raw("<div class='button'>Manage Pages</div>"), "admin/pages#index" %>
+</div>
+
+<div class='right_box'>
+    <a style='font-size: 20px;'>Action Log</a>
+    <table class='table'>
+        <thead>
+            <th>User</th>
+            <th>Action</th>
+        </thead>
+        <tbody id='log_preview'>
+        </tbody>
+    </table>
+    <a href='log/'><div class='button'>View Full Log</div></a>
+</div>
