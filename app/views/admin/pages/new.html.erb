@@ -1,0 +1,9 @@
+<% provide(:back, "/admin/pages") %>
+<%= form_for @page, url:admin_page_path(@page) do |f| %>
+    <a>Title: </a><%= f.text_field :title %><br/>
+
+    <a>Content :</a><br/>
+    <%= f.text_area :body, style: "margin-left: 5px; width: 945px; height: 500px;" %>
+
+    <%= f.submit %><a id="update_text"></a>
+<% end %>

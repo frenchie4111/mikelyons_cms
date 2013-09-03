@@ -1,3 +1,4 @@
+<% provide(:back, "/admin/pages") %>
 <%= form_for @page, url:admin_page_path(@page), remote: true do |f| %>
     <a>Title: </a><%= f.text_field :title, content: @page.title %><br/>
 
