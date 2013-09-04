@@ -1,0 +1,6 @@
+<%= form_for( @category, url: admin_category_path(@category) ) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, content: @category.name %>
+
+    <%= f.submit %>
+<% end %>

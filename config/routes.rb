@@ -1,4 +1,8 @@
 Mikelyons::Application.routes.draw do
+  get "categories/new"
+  get "categories/create"
+  get "categories/edit"
+  get "categories/update"
   get "static_pages/about"
   get "static_pages/projects"
   get "static_pages/contact"
@@ -19,6 +23,7 @@ Mikelyons::Application.routes.draw do
     root to: "home#index"
     resources :blog, only: [:index]
     resources :blog_posts, except: [:index]
+    resources :categories, only: [:new, :create, :edit, :update, :destroy]
     resources :pages
     resources :admin_actions
   end
