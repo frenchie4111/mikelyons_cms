@@ -40,7 +40,7 @@
         </thead>
         <tbody id='rows'>
             <% @categories.each do |category| %>
-                <tr>
+                <tr data-id="<%= category.id.to_s %>" class="category_row">
                     <td><%= category.name %></td>
                     <td>
                         <%= link_to( edit_admin_category_path(category) ) do %>
