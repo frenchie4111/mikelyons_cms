@@ -17,8 +17,10 @@ Mikelyons::Application.routes.draw do
 
   namespace :admin do
     root to: "home#index"
-    resources :blog_posts
+    resources :blog, only: [:index]
+    resources :blog_posts, except: [:index]
     resources :pages
+    resources :admin_actions
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

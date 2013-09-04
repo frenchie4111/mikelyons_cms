@@ -1,0 +1,14 @@
+<% provide(:back, "/admin/blog") %>
+<%= form_for @post, url:admin_blog_post_path(@post) do |f| %>
+    <%= f.label :title %>: <%= f.text_field :title, style: "width: 500px;" %>
+    <br/>
+
+    <%= f.label :body %>:<br/>
+    <%= f.text_area :body, style: "margin-left: 5px; width: 945px; height: 500px;" %>
+
+    <%= f.label :category_id %>:
+    <%= f.select(:category_id, @categories.collect {|cat| [cat.name, cat.id] }) %>
+
+    <br/>
+    <%= f.submit %><a id="update_text"></a>
+<% end %>
