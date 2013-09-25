@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130904000120) do
+ActiveRecord::Schema.define(version: 20130904140924) do
 
   create_table "admin_actions", force: true do |t|
     t.string   "title"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 20130904000120) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "page_aliases", force: true do |t|
+    t.string   "name"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_aliases", ["name"], name: "index_page_aliases_on_name", unique: true, using: :btree
 
   create_table "pages", force: true do |t|
     t.text     "body"

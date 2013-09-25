@@ -1,23 +1,16 @@
 Mikelyons::Application.routes.draw do
-  get "categories/new"
-  get "categories/create"
-  get "categories/edit"
-  get "categories/update"
-  get "static_pages/about"
-  get "static_pages/projects"
-  get "static_pages/contact"
+  root 'pages#show', page: "about"
 
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/projects', to: 'static_pages#projects', via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  get '/pages/:page', to: 'pages#show', as: :page
+
+  match '/about', to: 'pages#about', via: 'get'
+  match '/projects', to: 'pages#projects', via: 'get'
+  match '/contact', to: 'pages#contact', via: 'get'
 
   get '/blog', to: 'blog_posts#show_all', as: :blog
   get '/blog/category/:category', to: 'blog_posts#show_category', as: :blog_category
+  get 'blog/:id', to: "blog_posts#show", as: :id
 
-  get '/blog/sign_in', to: 'blog_posts#sign_in', as: :sign_in
-  post '/blog/sign_in', to: 'blog_posts#validate_sign_in', as: :validate_sign_in
-
-  root 'static_pages#about'
 
   namespace :admin do
     root to: "home#index"

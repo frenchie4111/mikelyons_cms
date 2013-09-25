@@ -1,0 +1,10 @@
+<%
+content_for :page_includes do
+    stylesheet_link_tag('top_contentbox') + 
+    javascript_include_tag('main_script')
+end
+%>
+<% provide( :current_page, @page_name ) %>
+<div id="content_area">
+    <%=  raw( @body ) %>
+</div>

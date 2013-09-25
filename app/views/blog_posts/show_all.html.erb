@@ -18,7 +18,8 @@ provide(:current_page, "blog") %>
 			<%= post.body %>
 		</div>
 		<div class="story_footer">
-			Author: <%= post.author %> - Date Created: <%= post.updated_at %>  - <a>Permalink</a>
+			Author: <%= post.author %> - Date Created: <%= post.updated_at %>  - 
+			<%= link_to( "Permalink", "/blog/" + post.id.to_s ) %>
 		</div>
 	</div>
 <% end %>
