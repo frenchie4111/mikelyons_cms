@@ -18,7 +18,7 @@
                     <div class='button edit' style='display:inline-block;'>Edit</div>
                 <% end %>
 
-                <%= link_to( admin_page_path(page), method: :delete, confirm: "Are you sure? (Cannot be undone)", remote: true ) do %>
+                <%= link_to( admin_page_path(page), method: :delete, data: { confirm: "Are you sure? (Cannot be undone)" }, remote: true ) do %>
                     <div class='button delete' style='display:inline-block;'>Delete</div>
                 <% end %>
             </td>
